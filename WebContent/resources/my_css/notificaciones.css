@@ -1,0 +1,48 @@
+#capaNotificaciones {
+	position: relative;
+}
+
+#slideNotificacion1, #slideNotificacion2 {
+	position: absolute;
+	width: 100%;
+}
+
+#slideNotificacion2, .notification-slide-up {
+	display: none;
+}
+
+.notification-slide-down .glyphicon-chevron-down, .notification-slide-up .glyphicon-chevron-up {
+	font-size: 20px;
+}
+
+#slideNotificacion2 .nav-pills {
+	background-color: white;
+	border-radius: 3px;
+}
+
+.capaNotificacionXS {
+	position: fixed;
+	right: 30px;
+	top: 60px;
+	z-index: 5;
+}
+
+.alertXSNotis {
+	font-size: 3rem;
+	color: #A90A02;
+}
+
+.alertXSNotis:hover {
+	color: #CF1A10;
+	border: 1px solid yellow;
+	border-radius: 20px;
+	box-sizing: content-box;
+}
+
+.numeroXSNotis {
+	position: absolute;
+	right: 8px;
+	top: 1px;
+	color: yellow;
+	pointer-events: none;
+}

@@ -1,0 +1,13 @@
+div.close.fileinput-remove {
+	color: #fff;
+	opacity: 0.8;
+}
+
+ div.close.fileinput-remove:hover {
+	opacity: 1; 
+}
+
+.file-footer-caption, .file-footer-caption:hover {
+	color: #fff;
+}
+

@@ -1,0 +1,61 @@
+.borde-grass {
+	background-color: inherit;
+	background-image: url("/DarkSky/assets/img/fondo/grass_assets/grassBG.png");
+	color: white;
+	overflow: hidden;
+}
+
+.grass {
+	border: 32px solid transparent;
+	border-image: url("/DarkSky/assets/img/fondo/grass_assets/grassBorders.png") 30% round;
+	overflow: hidden;
+}
+
+.titulo-entrada-nueva {
+	font-family: gbaPixelFont;
+	font-size: 2rem;
+}
+
+.en-portada {
+	padding-top: 10px;
+}
+
+/******************** CABECERAS INPUTS **********************/
+.titulo-post > div > div > label, .texto-post > div > div > label {
+	font-size: 2rem;
+}
+/************************************************************/
+
+/*********************** INPUTS *****************************/
+
+#imagen-post {
+	z-index: 0;
+}
+
+/*************************************************************/
+
+/* - FORM - */
+
+form .has-error .control-label  {
+	color: #ac0000;
+	font-weight: bold;
+}
+
+form .has-error .help-block {
+	color: #f8fb31;
+	font-weight: bold;
+}
+
+form .has-error .form-control {
+	border: 2px solid #ac0000;
+}
+
+form .has-success .control-label  {
+	color: #86fb7e;
+}
+
+form .has-success .form-control {
+	border: 2px solid #86fb7e;
+}
+
+/************/

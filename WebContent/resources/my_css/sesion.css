@@ -1,0 +1,58 @@
+.capa-login {
+	top: 150px;
+	position: fixed;
+	right: 5px;
+	width: 300px;
+	background-color: rgba(76, 104, 139, 1);
+	box-shadow: 0px 5px 5px #051B38;
+	border-radius: 5px;
+	display: none;
+	z-index: 3;
+	color: white;
+	margin-bottom: 15px;
+	border: 1px solid #091034;
+}
+
+.capa-avatar {
+	top: 150px; 
+	position:fixed;
+	width: 60px;
+	right: 15px;
+	position: fixed;
+	z-index: 3;
+}
+
+.titulo-sesion {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 2.3rem;
+	font-family: title2pixelFont;
+}
+
+.capa-login > form > div > div > a {
+	color: yellow;
+}
+
+.capa-login > form > div > div > .help-block {
+	color: #F9958A;
+}
+
+.capa-login > form > div > .has-error > input {
+	border-color: #F9958A;
+}
+
+.capa-login > form > div > .has-success > input {
+	border-color: #62B245;
+}
+
+.capa-login > form > div > .has-error > i {
+	color: #F9958A;
+}
+
+.capa-login > form > div > .has-success > i {
+	color: #62B245;
+}
+
+.popover {
+	min-width: 200px;
+}

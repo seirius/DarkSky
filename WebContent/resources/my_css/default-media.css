@@ -1,0 +1,36 @@
+/********************* CAPAS *****************************/
+
+@media screen and (max-width: 1024px) {
+	#capa-general {
+		padding: 0px;
+	}	
+	
+    #capa-izquierda {
+    	display: none;
+    }
+    
+    #capa-derecha {
+    	margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+	#capa-molde-general {
+		padding: 0px;
+	}
+	
+	#capa-general {
+		padding: 0px;
+	}	
+	
+    #capa-izquierda {
+    	display: none;
+    }
+    
+    #capa-derecha {
+    	margin-left: 0px;
+    }
+	
+}
+
+/*********************************************************/

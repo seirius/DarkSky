@@ -1,0 +1,106 @@
+/****************************CAPA NOTICIAS*************/
+
+.grid-item {
+	width: 100%;
+	background-color: #eaecdf;
+	height: 200px;
+	margin: 7px;
+}
+
+.con-imagen {
+	height: 300px;
+}
+
+@media screen and (min-width: 1750px) {
+	.grid-item {
+		width: 22%;
+	}
+}
+
+@media screen and (max-width: 1750px) {
+	.grid-item {
+		width: 32%;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.grid-item {
+		width: 48%;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	.grid-item {
+		width: 98%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.grid-item {
+		width: 48%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.grid-item {
+		width: 98%;
+	}
+}
+
+.capa-titulo {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	margin-botton: 5px;
+	font-size: 2rem;
+	font-family: generalPixelFont;
+	color: #083557;
+}
+
+.capa-imagen {
+	width: 100%;
+	height: 125px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-noticia {
+	flex-shrink:0;
+    min-width:100%;
+    min-height:100%
+}
+
+.capa-texto {
+	width: 100%;
+	padding: 10px;
+	font-family: consolas;
+	height: 100px;
+	overflow: hidden;
+}
+
+/******************************************************/
+
+/**************BOTONES********************************/
+
+.boton-leer-noticia {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+
+/*****************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+

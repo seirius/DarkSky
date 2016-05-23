@@ -1,0 +1,37 @@
+#capa-general {
+	background-color: inherit;
+	background-image: url("/DarkSky/assets/img/fondo/grass_assets/grassBG.png");
+	color: white;
+}
+
+#capa-general-borde {
+	border: 32px solid transparent;
+	border-image: url("/DarkSky/assets/img/fondo/grass_assets/grassBorders.png") 30% round;
+}
+
+form > div > .has-error > .control-label  {
+	color: #ac0000;
+	font-weight: bold;
+}
+
+form > div > .has-error > div > .help-block {
+	color: #f8fb31;
+	font-weight: bold;
+}
+
+form > div > .has-error > div > .form-control {
+	border: 2px solid #ac0000;
+}
+
+form > div > .has-success > .control-label  {
+	color: #86fb7e;
+}
+
+form > div > .has-success > div > .form-control {
+	border: 2px solid #86fb7e;
+}
+
+#creadoExito {font-size: 2rem;}
+
+#sesionAlt {font-size: 3rem;}
+#sesionAlt:hover {color: yellow;}

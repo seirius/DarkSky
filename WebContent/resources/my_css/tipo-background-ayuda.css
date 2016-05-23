@@ -1,0 +1,39 @@
+/*********** TIPO-0 **************/
+.tipo-0 {
+	background-color: #728DB9;
+}
+
+.tipo-0:hover {
+	background-color: #A6BAD9;
+	outline: 1px solid yellow;
+}
+
+/*********** TIPO-1 **************/
+.tipo-1 {
+	background-color: #2F8136;
+}
+
+.tipo-1:hover {
+	background-color: #7CCF9E;
+	outline: 1px solid yellow;
+}
+
+/*********** TIPO-2 **************/
+.tipo-2 {
+	background-color: #5B1B7F;
+}
+
+.tipo-2:hover {
+	background-color: #6F49A7;
+	outline: 1px solid yellow;
+}
+
+/*********** TIPO-2 **************/
+.tipo-3 {
+	background-color: #644011;
+}
+
+.tipo-3:hover {
+	background-color: #A87E48;
+	outline: 1px solid yellow;
+}
