@@ -36,13 +36,102 @@ $(document).ready(function () {
 			$(button.data("target")).val($(button.data("target")).data("oldvalue"));
 		};
 		
-		var ajaxCall = new AjaxCall(urls.USUARIO_RESPONSE, parameters, functionToEx, functionError);
-		button.button("loading");
-		ajaxCall.execute();
+		var functionBeforeSend = function() {
+			button.button("loading");
+		}
+		
+		var ajaxCall = new AjaxCall(urls.USUARIO_RESPONSE, parameters);
+		ajaxCall.execute(functionToEx, functionError, null, functionBeforeSend);
 	});
 	
 	$("#comprobarPassword").click(function () {
-		$("#groupoPWActual").addClass("hidden");
-		$("#groupoPWNuevo").removeClass("hidden");
+		var button = $(this);
+		
+		var method = button.data("method");
+		var value = $(button.data("target")).val();
+		
+		if (isEmpty(value)) {
+			modalError("Error", "La contraseña no puede ser vacia");
+			return;
+		}
+		
+		var parameters = {
+				method:     method,
+				value:      value,
+				nickTarget: perfilNick
+		};
+		
+		var functionToEx = function () {
+			button.button("reset");
+			if (this.ajaxCall.errorCode == 0) {
+				$(button.data("target")).val("");
+				$("#groupoPWActual").addClass("hidden");
+				$("#groupoPWNuevo").removeClass("hidden");
+				$("#groupoPWNuevoR").removeClass("hidden");
+				$("#grupoBotonPassword").removeClass("hidden");
+			}
+		};
+		
+		var functionBeforeSend = function () {
+			button.button("loading");
+		};
+		
+		var ajaxCall = new AjaxCall(urls.USUARIO_RESPONSE, parameters);
+		ajaxCall.execute(functionToEx, null, null, functionBeforeSend);
+		
+	});
+	
+	$("#cambiarPassword").click(function () {
+		var button = $(this);
+		
+		var method = button.data("method");
+		var value = $("#usuarioNuevaPassword").val();
+		var valueR = $("#usuarioNuevaPasswordR").val();
+		
+		if (isEmpty(value)) {
+			modalError("No se puede seguir.", "La contraseña no puede ser vacia.");
+			return;
+		}
+		
+		if (isEmpty(valueR)) {
+			modalError("No se puede seguir.", "La contraseña no puede ser vacia.");
+			return;
+		}
+		
+		if (value != valueR) {
+			modalError("No se puede seguir.", "Las contraseñas no coinciden.");
+			return;
+		} 
+		
+		var parameters = {
+			method:     method,
+			value:      value,
+			nickTarget: perfilNick
+		};
+		
+		var functionBeforeSend = function () {
+			button.button("loading");
+		};
+		
+		var functionToEx = function () {
+			button.button("reset");
+			cancelarCambiarPassword();
+		};
+		
+		var ajaxCall = new AjaxCall(urls.USUARIO_RESPONSE, parameters);
+		ajaxCall.execute(functionToEx, null, null, functionBeforeSend);
+	});
+	
+	$("#cancelarCambiarPasswordR").click(function () {
+		cancelarCambiarPassword();
 	});
 });
+
+function cancelarCambiarPassword() {
+	$("#groupoPWActual").removeClass("hidden");
+	$("#groupoPWNuevo").addClass("hidden");
+	$("#groupoPWNuevoR").addClass("hidden");
+	$("#grupoBotonPassword").addClass("hidden");
+	$("#usuarioNuevaPassword").val("");
+	$("#usuarioNuevaPasswordR").val("");
+}

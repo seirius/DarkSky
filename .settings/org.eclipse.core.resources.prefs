@@ -1,6 +1,9 @@
 eclipse.preferences.version=1
+encoding//WebContent/includes/elements/injection_html/editar-menu.html=UTF-8
 encoding//WebContent/includes/elements/injection_html/modal-error.html=ISO-8859-1
 encoding//WebContent/resources/my_script/crear-cuenta.js=ISO-8859-1
 encoding//WebContent/resources/my_script/default.js=ISO-8859-1
+encoding//WebContent/resources/my_script/menuBar.js=ISO-8859-1
+encoding//WebContent/resources/my_script/perfil.js=ISO-8859-1
 encoding//WebContent/resources/my_script/post.js=ISO-8859-1
 encoding//WebContent/resources/my_script/sesion.js=ISO-8859-1

@@ -33,5 +33,6 @@
         <mapping class="darksky.modelo.bean.EventoNotificacion" />
         <mapping class="darksky.modelo.bean.OperacionAutorizacion" />
         <mapping class="darksky.modelo.bean.ConfirmarAccion" />
+        <mapping class="darksky.modelo.bean.Menu" />
     </session-factory>
 </hibernate-configuration>

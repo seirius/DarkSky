@@ -16,9 +16,12 @@
 <script src="/DarkSky/resources/bootstrap-validator/bootstrapValidator.js"></script>
 <script src="/DarkSky/resources/elements/summernote/summernote.js"></script>
 <script src="/DarkSky/resources/elements/bootstrap-toolkit-javascript/bootstrap-toolkit.min.js"></script>
+<script src="/DarkSky/resources/my_script/BStoJS.js"></script>
+<script src="/DarkSky/resources/my_script/AjaxCall.js"></script>
 <script src="/DarkSky/resources/my_script/default.js"></script>
 <script src="/DarkSky/resources/my_script/notificaciones.js"></script>
 <script src="/DarkSky/resources/my_script/dynamicInserts.js"></script>
 <script src="/DarkSky/resources/my_script/sesion.js"></script>
+<script src="/DarkSky/resources/my_script/menuBar.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale = 1" />

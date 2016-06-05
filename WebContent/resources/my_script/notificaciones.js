@@ -56,6 +56,7 @@ var numNotisEntrada = 0;
 					}
 					
 					$("#botonXSEntrada").click(function () {
+						$("body").css("cursor", "wait");
 						var modal = launchModal("Lista de notificaciones");
 						var ajaxNotificaciones = cargarNotificaciones("PEN", 0);
 						ajaxNotificaciones.done(function (data) {
@@ -67,6 +68,7 @@ var numNotisEntrada = 0;
 								modal.find(".modal-body").append(ul);
 								modal.modal("show");
 							}
+							$("body").css("cursor", "auto");
 						});
 					});
 					
@@ -150,6 +152,7 @@ var numNotisEntrada = 0;
 			}
 
 			$(".mostrarMasNotificaciones").click(function () {
+				$("body").css("cursor", "wait");
 				var modal = launchModal("Lista de notificaciones");
 				var ajaxNotificaciones = cargarNotificaciones("PEN", 0);
 				ajaxNotificaciones.done(function (data) {
@@ -160,6 +163,7 @@ var numNotisEntrada = 0;
 						cargarListaNotificacionesFuncionalidad(ul, notificaciones);
 						modal.find(".modal-body").append(ul);
 						modal.modal("show");
+						$("body").css("cursor", "auto");
 					}
 				});
 			});

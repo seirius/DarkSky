@@ -1,3 +1,4 @@
+<%@page import="darksky.util.MyUtil"%>
 <%@page import="darksky.exceptions.ExceptionDAO"%>
 <%@page import="darksky.controlador.helpers.SessionHandler"%>
 <%@page import="darksky.modelo.bean.Post"%>
@@ -95,7 +96,7 @@ if (isSessionInit) {
 								<div class="bloque-categoria">
 									<!-- TITULO CATEGORIA -->
 									<div class="titulo-categoria">
-										<span><%= categoria.getCategoria() %></span>
+										<span class="clickable" data-href="/DarkSky/categoria?categoria=<%= categoria.getCategoria() %>"><%= categoria.getCategoria() %></span>
 									</div>
 									
 									<%
@@ -172,7 +173,13 @@ if (isSessionInit) {
 		
 											<!-- Contenedor descripcion -->
 											<div class="bloque-texto-descripcion">
-												<span style="font-size: 0.95rem">Creado por <%= post.getUsuario().getNick() %> y enviado el <%= post.getFechaCreacion() %></span>
+												<span style="font-size: 0.95rem">
+													Creado por 
+													<span class="clickable" data-href="/DarkSky/perfil?usuario=<%= post.getUsuario().getNick() %>">
+														<%= post.getUsuario().getNick() %>
+													</span> 
+													<span> y enviado el <%= MyUtil.getFechaFormateada(post.getFechaCreacion(), "dd-MM-yyyy HH:mm:ss") %></span>
+												</span>
 											</div>
 										</div>
 									</div>

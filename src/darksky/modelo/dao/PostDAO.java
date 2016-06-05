@@ -2,6 +2,7 @@ package darksky.modelo.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -110,11 +111,15 @@ public class PostDAO {
 		List<Post> list = null;
 
 		try {
-			list = session.createCriteria(Post.class)
+			Criteria criteria = session.createCriteria(Post.class)
 					.add(Restrictions.eq("categoriaPost", categoria))
-					.addOrder(Order.desc(orderBy))
-					.setMaxResults(resultados)
-					.list();
+					.addOrder(Order.desc(orderBy));
+			
+			if (resultados != 0) {
+				criteria.setMaxResults(resultados);
+			}
+			
+			list = criteria.list();
 		} catch(Exception e) {
 			e.printStackTrace();
 			throw new ExceptionDAO("Error Interno", e.getCause());

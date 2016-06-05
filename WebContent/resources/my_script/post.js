@@ -51,6 +51,11 @@ $(document).ready(function () {
 		var type =  $("#comentarioType").html();
 		var textoComentario = $("#comentarioTexto").summernote("code");
 		
+		if (textoComentario == "<p><br></p>") {
+			launchModal("Acción no permitida", "El texto no puede estar vacio").modal("show");
+			return;
+		}
+		
 		$.ajax({
 			url: urls.COMENTAR,
 			type: "POST",
@@ -72,6 +77,11 @@ $(document).ready(function () {
 	$("#botonComentarPost").click(function () {
 		var type = "comentar";
 		var textoComentario = $("#textoComentarioPost").summernote("code");
+
+		if (textoComentario == "<p><br></p>") {
+			launchModal("Acción no permitida", "El texto no puede estar vacio").modal("show");
+			return;
+		}
 		
 		$.ajax({
 			url: urls.COMENTAR,

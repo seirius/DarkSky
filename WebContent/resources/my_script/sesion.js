@@ -6,7 +6,7 @@
 			$(".capa-avatar").click(function () {
 				
 				if (!isSessionInit) {
-					var header = $("<div class='text-center titulo-sesion'><span>Iniciar Sesion</span></div>")
+					var header = $("<div class='text-center titulo-sesion'><span>Iniciar Sesion</span></div>");
 					var form = $("<form></form>");
 					var row = $("<div class='row'></div>")
 					var colXS12 = $("<div class='col-xs-12'></div>");
@@ -58,7 +58,7 @@
 									if (estado) {
 										window.location.replace(thisPath);
 									} else {
-										$(".initError").removeClass("hidden");
+										modalError("Error de identificacion", "Usuario y/o contraseña, incorrectos.");
 									}
 								}
 							}
@@ -68,6 +68,8 @@
 					var tituloSesion = $("<div class='text-center titulo-sesion'></div>");
 					var tituloNick = $("<span></span>");
 					tituloNick.append(nick);
+					tituloNick.addClass("pointer");
+					tituloNick.data("href", "/DarkSky/perfil?usuario=" + nick);
 					tituloSesion.append(tituloNick);
 					
 					var textCenter = $("<div class='text-center margin-bot-1'></div>");
@@ -79,6 +81,10 @@
 					
 					var modal = launchModal(tituloSesion, textCenter);
 					modal.modal("show");
+					
+					tituloNick.click(function () {
+						window.document.location = $(this).data("href");
+					});
 				}
 			});
 		} else {

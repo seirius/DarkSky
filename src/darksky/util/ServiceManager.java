@@ -6,6 +6,7 @@ import darksky.modelo.dao.CategoriaPostDAO;
 import darksky.modelo.dao.ComentarioDAO;
 import darksky.modelo.dao.ImagenDAO;
 import darksky.modelo.dao.ItemDAO;
+import darksky.modelo.dao.MenuDAO;
 import darksky.modelo.dao.NotificacionDAO;
 import darksky.modelo.dao.PostDAO;
 import darksky.modelo.dao.SeguirDAO;
@@ -56,6 +57,10 @@ public class ServiceManager {
 	
 	public NotificacionDAO getNotificacionDAO() {
 		return new NotificacionDAO(session);
+	}
+	
+	public MenuDAO getMenuDAO() {
+		return new MenuDAO(session);
 	}
 	
 	public Session getSession() {

@@ -69,7 +69,7 @@ String thisPath = "/DarkSky/perfil?usuario=" + perfilUsuario;
 								<div class="col-xs-12">
 								
 									<div class="row">
-										<div class="col-xs-12">
+										<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 											<div class="nick-titulo text-center">
 												<img src="<%= usuario.getAvatar().getImagen().getUrl() %>" alt="Avatar" width="50" />
 												<span><%= usuario.getNick() %></span>
@@ -77,9 +77,12 @@ String thisPath = "/DarkSky/perfil?usuario=" + perfilUsuario;
 										</div>
 									</div>
 									
+									<%
+									if (isSessionInit && usuarioService.permisoEditarUsuario(perfilUsuario, sessionHandler.getUsuario().getNick())) {
+									%>
 									<!-- NOMBRE -->
 									<div class="row margin-top-1">
-										<div class="col-xs-12">
+										<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 											<div class="input-group">
 												<input type="text" name="" class="form-control" id="usuarioNombre" data-oldvalue="<%= usuario.getNombre() %>" value="<%= usuario.getNombre() %>" disabled/>
 												<span class="input-group-btn">
@@ -92,7 +95,7 @@ String thisPath = "/DarkSky/perfil?usuario=" + perfilUsuario;
 									
 									<!-- EMAIL -->
 									<div class="row margin-top-1">
-										<div class="col-xs-12">
+										<div class="col-xs-12 col-sm-6 col-sm-offset-3">
 											<div class="input-group">
 												<input type="text" name="" class="form-control" id="usuarioEmail" data-oldvalue="<%= usuario.getEmail() %>" value="<%= usuario.getEmail() %>" disabled/>
 												<span class="input-group-btn">
@@ -103,24 +106,82 @@ String thisPath = "/DarkSky/perfil?usuario=" + perfilUsuario;
 										</div>
 									</div>
 									
-									<!-- PASSWORD -->
+									
 									<div class="row margin-top-1">
-										<div class="col-xs-12">
-											<div class="input-group" id="groupoPWActual">
-												<input type="password" name="" class="form-control" id="usuarioPassword" placeholder="Introduce la contraseña actual"/>
-												<span class="input-group-btn">
-													<button type="button" class="btn btn-warning" id="comprobarPassword" data-method="comprobarPassword"><span class="glyphicon glyphicon-pencil"></span> Contraseña</button>
-												</span>
-											</div>
-											<div class="input-group hidden" id="groupoPWNuevo">
-												<input type="password" name="" id="usuarioNuevaPassword" class="form-control" placeholder="Introduce la nueva contraseña" />
-												<span class="input-group-btn">
-													<button type="button" class="btn btn-success" id="cambiarPassword" data-method="cambiarPassword" data-loading-text="<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span> Guardando">Guardar</button>
-												</span>
+										<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+											<div class="panel panel-default">
+												<div class="panel-heading">Cambiar contraseña</div>
+												<div class="panel-body">
+												
+													<!-- PASSWORD -->
+													<div class="row margin-top-1">
+														<div class="col-xs-12">
+															<div class="input-group" id="groupoPWActual">
+																<input type="password" name="" class="form-control" id="usuarioPassword" placeholder="Introduce la contraseña actual"/>
+																<span class="input-group-btn">
+																	<button type="button" class="btn btn-warning" id="comprobarPassword" data-method="comprobarPassword" data-target="#usuarioPassword" data-loading-text="<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span> Comprobando"><span class="glyphicon glyphicon-pencil"></span> Contraseña</button>
+																</span>
+															</div>
+														</div>
+													</div> <!-- FIN PASSWORD -->
+												
+													<!-- NEW PASSWORD -->
+													<div class="row">
+														<div class="col-xs-12">
+															<div class="form-group hidden" id="groupoPWNuevo">
+																<input type="password" name="" id="usuarioNuevaPassword" class="form-control" placeholder="Introduce la nueva contraseña" />
+															</div>
+														</div>
+													</div> <!-- FIN NEW PASSWORD -->
+													
+													<!-- NEW PASSWORD R -->
+													<div class="row">
+														<div class="col-xs-12">
+															<div class="form-group hidden" id="groupoPWNuevoR">
+																<input type="password" name="" id="usuarioNuevaPasswordR" class="form-control" placeholder="Repite la nueva contraseña" />
+															</div>
+														</div>
+													</div> <!-- FIN NEW PASSWORD R -->
+													
+													<!-- BOTONES PASSWORD -->
+													<div class="row margin-top-1 hidden" id="grupoBotonPassword">
+														<div class="col-xs-12">
+															<div class="btn-group pull-right" role="group" ariab-label="Control de contraseñas">
+																<button type="button" class="btn btn-danger" id="cancelarCambiarPasswordR" >Cancelar</button>
+																<button type="button" class="btn btn-success" id="cambiarPassword" data-method="cambiarPassword" data-loading-text="<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span> Guardando">Guardar</button>
+															</div>
+														</div>
+													</div>
+													
+												</div> <!-- FIN PANEL BODY -->
+											</div> <!-- FIN PANEL -->
+										</div>
+									</div>
+									<%
+									} else {
+										if (usuario.getNombre() != null) {
+										%>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+											<div class="labels-titulo text-center">
+												<span><%= usuario.getNombre() %></span>
 											</div>
 										</div>
 									</div>
-									
+										<%
+										}
+										%>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+											<div class="labels-titulo text-center">
+												<span><%= usuario.getEmail() %></span>
+											</div>
+										</div>
+									</div>
+										
+										<%
+									}
+									%>
 								</div>
 							</div>
 						</div>

@@ -12,4 +12,8 @@ public class ExceptionBEAN extends RuntimeException {
 	public ExceptionBEAN(String msg, Throwable cause) {
 		super(msg, cause);
 	}
+	
+	public ExceptionBEAN(ExceptionBEAN e) {
+		super(e.getMessage(), e.getCause());
+	}
 }

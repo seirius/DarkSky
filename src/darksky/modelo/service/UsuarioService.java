@@ -86,6 +86,16 @@ public class UsuarioService {
 		return false;
 	}
 	
+	public boolean permisoEditarMenu(Usuario usuario) {
+		String rol = usuario.getRol().getRol();
+		
+		if (rol.equals("ADMIN") || rol.equals("GOD")) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public boolean permisoEditarUsuario(String target, String origin) {
 		boolean permitido = false;
 		

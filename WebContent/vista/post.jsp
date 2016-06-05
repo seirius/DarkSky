@@ -86,10 +86,6 @@ if (sessionHandler.isInit()) {
 		<jsp:param name="backUrl" value="<%= thisPath %>" />
 	</jsp:include>
 
-	<!-- TITULO -->
-	<%@ include file="/includes/elements/titulo.jsp"%>
-
-
 	<!-- MENU -->
 	<%@ include file="/includes/elements/menu-bar.jsp"%>
 
@@ -232,7 +228,11 @@ if (sessionHandler.isInit()) {
 							<!-- Informacion del creador -->
 							<div class="row">
 								<div class="col-xs-12 text-right">
-									<span>Creador por <%= post.getUsuario().getNick() %></span><br>
+									<span>Creador por 
+										<span class="clickable" data-href="/DarkSky/perfil?usuario=<%= post.getUsuario().getNick() %>">
+											<%= post.getUsuario().getNick() %>
+										</span>
+									</span><br>
 									<span><%= MyUtil.getFechaFormateada(post.getFechaCreacion(), "dd-MM-yyyy HH:mm:ss") %></span>
 								</div>
 							</div>

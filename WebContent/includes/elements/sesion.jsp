@@ -27,7 +27,7 @@ var nick = "<%= nick %>";
 		%>
 		<!-- TITULO LOGIN -->
 		<div class="text-center titulo-sesion">
-			<span><%= usuario.getNick() %></span>
+			<span class="clickable" data-href="/DarkSky/perfil?usuario=<%= usuario.getNick() %>"><%= usuario.getNick() %></span>
 		</div>
 		<div class="text-center margin-bot-1">
 			<button class="btn btn-pixel btn-pixel-blue clickable" data-href="<%= "/DarkSky/cerrar-sesion?backUrl="+request.getParameter("backUrl") %>">Cerrar sesion</button>

@@ -191,4 +191,12 @@
     <servlet-name>perfil</servlet-name>
     <url-pattern>/perfil</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>categoria</servlet-name>
+    <jsp-file>/vista/categoria.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>categoria</servlet-name>
+    <url-pattern>/categoria</url-pattern>
+  </servlet-mapping>
 </web-app>

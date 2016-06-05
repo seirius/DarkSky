@@ -53,13 +53,21 @@ public class UsuarioResponse extends HttpServlet {
 			modificarEmail(request, response, sessionHandler, ret);
 		break;
 		
+		case "comprobarPassword":
+			comprobarPassword(request, response, sessionHandler, ret);
+		break;
+		
+		case "cambiarPassword":
+			cambiarPassword(request, response, sessionHandler, ret);
+		break;
+		
 		default:
 			ret.setErrorMsg(ErrorMsgs.METHOD_NOT_FOUND + type);
 		}
 		
 		out.print(ret.getRet());
 	}
-	
+
 	private void modificarNombre(HttpServletRequest request, HttpServletResponse response, SessionHandler sessionHandler, JsonReturn ret) {
 		try {
 			
@@ -101,6 +109,52 @@ public class UsuarioResponse extends HttpServlet {
 				ret.setErrorMsg(ErrorMsgs.NO_PERMISSION_USER);
 			}
 			
+		} catch(Exception e) {
+			e.printStackTrace();
+			ret.setErrorMsg(ErrorMsgs.STANDARD_MSG);
+		}
+	}
+
+	private void comprobarPassword(HttpServletRequest request, HttpServletResponse response, SessionHandler sessionHandler, JsonReturn ret) {
+		try {
+			UsuarioService usuarioService = new UsuarioService();
+			
+			String nickTarget = request.getParameter("nickTarget");
+			String value = request.getParameter("value");
+			
+			Usuario origin = sessionHandler.getUsuario();
+			Usuario target = usuarioService.getUsuario(nickTarget);
+			
+			if (usuarioService.permisoEditarUsuario(nickTarget, origin.getNick())) {
+				if (!target.getPassword().equals(value)) {
+					ret.setErrorMsg("La contraseña no coincide");
+				}
+			} else {
+				ret.setErrorMsg(ErrorMsgs.NO_PERMISSION_USER);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			ret.setErrorMsg(ErrorMsgs.STANDARD_MSG);
+		}
+	}
+	
+	private void cambiarPassword(HttpServletRequest request, HttpServletResponse response, SessionHandler sessionHandler, JsonReturn ret) {
+		try {
+			UsuarioService usuarioService = new UsuarioService();
+			
+			String nickTarget = request.getParameter("nickTarget");
+			String value = request.getParameter("value");
+			
+			Usuario origin = sessionHandler.getUsuario();
+			Usuario target = usuarioService.getUsuario(nickTarget);
+			
+			if (usuarioService.permisoEditarUsuario(nickTarget, origin.getNick())) {
+				target.setPassword(value);
+				usuarioService.updateUsuario(target);
+			} else {
+				ret.setErrorMsg(ErrorMsgs.NO_PERMISSION_USER);
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 			ret.setErrorMsg(ErrorMsgs.STANDARD_MSG);

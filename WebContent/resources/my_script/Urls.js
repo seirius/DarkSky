@@ -23,6 +23,7 @@ function Urls() {
 	this.VOTAR               = this.ROOT_PATH + "votar";
 	this.INICIAR_SESION      = this.ROOT_PATH + "iniciar-sesion";
 	this.USUARIO_RESPONSE    = this.ROOT_PATH + "usuario-response";
+	this.MENU_CONTROL        = this.ROOT_PATH + "menu-control";
 	
 	//---------------------------------------------------------------
 	//JSPs AJAX calls
@@ -32,6 +33,7 @@ function Urls() {
 	//---------------------------------------------------------------
 	//HTML AJAX calls
 	//---------------------------------------------------------------
+	this.EDITAR_MENU = this.ROOT_PATH + "includes/elements/injection_html/editar-menu.html";
 	this.MODAL_ERROR = this.ROOT_PATH + "includes/elements/injection_html/modal-error.html";
 }
 

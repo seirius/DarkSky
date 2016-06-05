@@ -45,8 +45,4 @@ $(document).ready(function () {
 			}
 		}
 	});
-	
-	$("#buttonCrearEntrada").click(function () {
-		$(this).prop("disabled", true);
-	});
 });

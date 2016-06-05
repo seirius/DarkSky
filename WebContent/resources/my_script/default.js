@@ -145,6 +145,37 @@ function votar(valorVoto, votoCont, id) {
 	}
 }
 
+//------------------------------------------------------------
+//UTIL
+//------------------------------------------------------------
+
+/**
+ * Comprueba si un elemento esta nulo, indefinido o es un string vacio ('').
+ * 
+ * @param Item
+ * @param {Boolean} ret
+ */
+function isEmpty(item) {
+	if (item == null || typeof item == "undefined" || item == "") {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function isString(item) {
+	if (typeof item == "string") {
+		return true;
+	}
+	return false;
+}
+
+function isUndefined(item) {
+	if (typeof item == "undefined") {
+		return true;
+	}
+	return false;
+}
 
 //------------------------------------------------------------
 //DEBUG
@@ -154,6 +185,7 @@ function debugOnConsole(debugTarget, name, timeInterval) {
 		console.log(name + ": " + debugTarget);
 	}, timeInterval);
 }
+
 
 
 
