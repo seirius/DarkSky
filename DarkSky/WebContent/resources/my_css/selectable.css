@@ -1,0 +1,32 @@
+.selectable-container {
+	padding: 5px;
+	display: inline-block;
+	background-color: rgba(14, 80, 80, 0.6);
+	outline: 1px solid rgba(33, 4, 57, 1);
+	max-width: 1000px;
+}
+
+.selectable-avatar {
+	width: 60px;
+	height: 60px;
+	margin: 5px;
+	border: solid rgb(255, 255, 255);
+}
+
+.selectable-avatar > img {
+	height: 100%;
+}
+
+.ui-selected {
+	border: solid yellow;
+	box-shadow: inset 0px 0px 10px yellow;
+}
+
+ol {
+	list-style-type: none;
+	padding: 0;
+}
+
+ol>li {
+	display: inline-block;
+}

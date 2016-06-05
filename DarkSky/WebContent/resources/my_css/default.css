@@ -1,0 +1,312 @@
+.margin-top-1 {margin-top: 1rem;}
+.margin-top-2 {margin-top: 2rem;}
+.margin-top-3 {margin-top: 3rem;}
+.margin-top-4 {margin-top: 4rem;}
+.margin-bot-1 {margin-bottom: 1rem;}
+.margin-bot-2 {margin-bottom: 2rem;}
+.margin-bot-3 {margin-bottom: 3rem;}
+.margin-bot-4 {margin-bottom: 4rem;}
+.right {float: right;}
+.left {float: left;}
+.no-resize {resize: none;}
+.font-size-1{font-size: 1rem;}
+.font-size-2{font-size: 2rem;}
+.font-size-3{font-size: 3rem;}
+.font-size-4{font-size: 4rem;}
+.font-size-5{font-size: 5rem;}
+.overflow-auto {overflow: auto;}
+.color-red {color: red;}
+.color-251758 {color: #251758;}
+
+
+/********************* FONDO *****************************/
+
+#fondo {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	/*background-color: purple;*/
+	background-image: url("/DarkSky/assets/img/fondo/background_1.png");
+	background-repeat: repeat;
+	min-height: 85vh; /*Temporal*/
+}
+
+/*********************************************************/
+
+/********************* CAPAS *****************************/
+
+#capa-molde-general {
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+
+#capa-general {
+	width: 100%;
+	background-color: rgba(225, 229, 207, 0.3);
+	padding: 2rem;
+	overflow: hidden;
+}
+
+#capa-derecha {
+	//background-color: rgba(225, 229, 207, 0.7);
+	margin-left: 370px;
+	overflow: hidden;
+}
+
+#capa-izquierda {
+	width: 350px;
+	min-height: 900px;
+	background-color: rgba(60, 80, 78, 0.7);
+    float: left;
+}
+
+/*********************************************************/
+
+/********************* Titulo *******************************/
+
+.bloque-titulo {
+	width: 100%;
+	min-height: 100px;
+	text-align: center;
+	background-image: url("/DarkSky/assets/img/titulo/titulo_bg_default.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#texto-titulo {
+	font-size: 7rem;
+	font-family: titlePixelfont;
+}
+
+#texto-titulo > span:first-child {
+	color: white;
+}
+
+#texto-titulo > span:last-child {
+	color: dodgerblue;
+}
+
+/************************************************************/
+
+
+/********************* MENU-BAR *****************************/
+.navbar-inverse {
+	margin: 0;
+	border-radius: 0;
+	background-image: url("/DarkSky/assets/img/menu-bar/menuBar_texture.png");
+	//background-repeat: no-repeat;
+	box-shadow: 0px 5px 20px black;
+}
+
+.navbar-inverse .dropdown-menu {
+	background-image: url("/DarkSky/assets/img/menu-bar/menuBar_texture.png");
+}
+
+.navbar-inverse .dropdown-menu > li > a {
+	font-family: menuPixelfont;
+	font-size: 1.5rem;
+	color: rgb(244, 225, 185);
+}
+
+.navbar-inverse .dropdown-menu > li > a:hover {
+	color: rgb(50, 128, 246);
+}
+
+.navbar-inverse .navbar-nav > li {
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	font-family: menuPixelfont;
+	font-size: 1.5rem;
+	color: rgb(244, 225, 185);
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: rgb(50, 128, 246);
+}
+
+.myActive {
+	box-shadow: inset 0 0 50px rgb(47, 34, 54); /*rgb(255, 140, 0)*/
+	border: 2px solid black;
+	margin: -2px 4px -2px -2px;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: transparent;
+  box-shadow: inset 0 0 50px rgb(47, 34, 54); /*rgb(255, 140, 0)*/
+  margin: 0px 2px -2px -2px;
+}
+
+/************************************************************/
+
+/****************************BOTONES********************************/
+
+.clickable, .pointer {
+	cursor: pointer;
+}
+
+/********BOTON GBA**********/
+
+.btn-gba {
+	background-color: none;
+	border: none;
+	font-family: gbaPixelFont;
+	background: rgba(73,155,234,1);
+	background: -moz-linear-gradient(left, rgba(73, 155, 234, 1) 0%,
+		rgba(32, 124, 229, 1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73, 155, 234,
+		1)), color-stop(100%, rgba(32, 124, 229, 1)));
+	padding: 5px;
+	color: white;
+	font-size: 1.5rem;
+	box-shadow: 0px 5px 5px gray;
+}
+
+.btn-gba:focus {
+	box-shadow: inset 2px 2px 12px gray;
+	padding-bottom: 6px;
+	padding-top: 4px;
+	background: rgba(135, 199, 227, 1);
+	background: -moz-linear-gradient(left, rgba(135, 199, 227, 1) 0%,
+		rgba(26, 166, 209, 1) 52%, rgba(141, 202, 226, 1) 100%);
+	color: #042024;
+	outline: 2px solid rgba(73, 155, 234, 1);
+	outline-style: hidden;
+}
+
+.btn-gba:hover {
+	background: rgba(135, 199, 227, 1);
+	background: -moz-linear-gradient(left, rgba(135, 199, 227, 1) 0%,
+		rgba(26, 166, 209, 1) 52%, rgba(141, 202, 226, 1) 100%);
+	color: #042024;
+}
+
+/********BOTON PIXEL**********/
+
+.btn-pixel {
+	background-color: #009c81;
+	border: 0;
+	border-top: 3px solid #94f3a6;
+	border-right: 3px solid #94f3a6;
+	border-left: 3px solid #00666e;
+	border-bottom: 3px solid #00666e;
+	margin: -3px;
+	color: white;
+	line-height: normal;
+	overflow: visible;
+	padding: 0px 5px 0px 5px;
+	font-family: gbaPixelFont;
+	font-size: 1rem;
+}
+
+.btn-pixel:active {
+	border: 3px solid #00666e;
+	box-shadow: inset 0px 1px 5px 2px rgba(0, 0, 0, 0.4);
+	padding-top: 2px;
+	margin-bottom: -5px;
+	text-decoration: none;
+}
+
+.btn-pixel:hover {
+	text-decoration: none;
+	color: orange;
+}
+
+.btn-pixel:focus {
+	outline-width: 0px;
+	text-decoration: none;
+}
+
+.btn-pixel-blue {
+	background-color: #1b67d8;
+	border-top: 3px solid #8db3f1;
+	border-right: 3px solid #8db3f1;
+	border-left: 3px solid #153c75;
+	border-bottom: 3px solid #153c75;
+}
+
+.btn-pixel-lg {
+	padding: 5px 10px 5px 10px;
+}
+
+/*******************************************************************/
+
+/* - BTN-ICON -  */
+
+.btn-icon {
+	padding: 5px 10px 2px 10px;
+	background: none;
+	color: #fff;
+	font-size: 24px;
+}
+
+
+.btn-icon:hover {
+	color: #49b3f4;
+}
+
+.btn-icon:focus, .btn-icon:active {
+	color: #fff;
+	outline: none;
+}
+
+.btn-icon-black {
+	color: #000;
+}
+
+.btn-icon-black:focus, .btn-icon-black:active {
+	color: #000;
+	outline: none;
+}
+
+
+/*****************/
+
+/* - Glyphicons - */
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -ms-animation: spin .7s infinite linear;
+    -webkit-animation: spinw .7s infinite linear;
+    -moz-animation: spinm .7s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+  
+@-webkit-keyframes spinw {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spinm {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}
+
+.label-size-refresh {font-size: 0.9rem;}
+
+/******************/
+
+/* - PANEL BLACK - */
+
+.panel-black {
+	background-color: transparent;
+}
+
+.panel-black > .panel-heading {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+}
+
+.panel-black > .panel-body {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --------------- */
+
+

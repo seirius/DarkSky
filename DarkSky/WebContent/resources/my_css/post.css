@@ -1,0 +1,168 @@
+.bloque-post {
+	width: 100%;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.bloque-comentario {
+	position: relative;
+}
+
+.capa-votos {
+	font-size: 2rem;
+	width: 50px;
+	/*border: 1px solid green;*/
+}
+
+.voto-positivo:hover, .voto-negativo:hover {color: orange;}
+.select-positivo {color: green;}
+.select-negativo {color: red;}
+
+.capa-boton-opcion {
+	width: 50px;
+}
+
+.capa-titulo {
+	/*border: 1px solid red;*/
+	font-size: 2.5rem;
+	font-family: title2PixelFont;
+}
+
+.capa-texto {
+	/*border: 1px solid yellow;*/
+	font-size: 1.2rem;
+	font-family: generalPixelFont;
+}
+
+.capa-imagen {
+	width: 150px;
+}
+
+.capa-imagen > img {
+	width: 100%;
+}
+
+.capa-datos {
+	/*border: 1px solid red;*/
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-right: 10px;
+}
+
+.capa-datos-comentario {
+	font-size: 0.9rem;
+	/*border: 1px solid red;*/
+	padding: 0;
+	padding-right: 10px;
+}
+
+.capa-comentario-texto {
+	padding: 8px;
+}
+
+.capa-comentarios {
+	width: 100%;
+	padding: 15px;
+}
+
+
+.comentario {
+	float: right;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	outline: 2px solid green;
+	padding: 15px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-right: 2px;
+}
+
+.boton-abrir-comentar {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+}
+
+.capa-comentar {
+	padding: 15px 0 15px 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+}
+
+.responder-toggle {color: dodgerblue;}
+.responder-toggle:hover {text-decoration: underline;}
+
+
+/**************** CAPA IZQUIERDA *****************/
+#titulo-post-ayuda {
+	font-size: 2.3rem;
+	color: white;
+	padding: 15px;
+}
+
+.capa-comentario-ayuda {
+	font-size: 1.8rem;
+	color: white;
+	overflow: hidden;
+}
+
+.capa-texto-comentario-ayuda {
+	padding: 15px;
+}
+
+.padding-right-5 {padding-right: 2.5%;}
+
+.capa-boton-seguir {
+	padding: 15px 0px 15px 0px;
+	font-family: title2PixelFont;
+	font-size: 0.5rem;
+}
+
+.capa-comentar .panel {
+	margin-bottom: 5px;
+}
+
+.informacion-comentario {
+	font-size: 10px;
+}
+
+.comentario-expendido {
+	border: 1px solid yellow;
+	width: 100%;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	overflow: hidden;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.slides {
+	position: relative;
+}
+
+#slide1, #slide2 {
+	width: 100%;
+	position: absolute;
+}
+
+#slide2 {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

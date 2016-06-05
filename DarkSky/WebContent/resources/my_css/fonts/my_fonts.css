@@ -1,0 +1,29 @@
+@font-face {
+    font-family: menuPixelFont;
+    src: url("/DarkSky/assets/fonts/8-BIT.TTF");
+}
+
+@font-face {
+    font-family: titlePixelFont;
+    src: url("/DarkSky/assets/fonts/origap.ttf");
+}
+
+@font-face {
+    font-family: generalPixelFont;
+    src: url("/DarkSky/assets/fonts/nokia.ttf");
+}
+
+@font-face {
+	font-family: gbaPixelFont;
+    src: url("/DarkSky/assets/fonts/gba.ttf");
+}
+
+@font-face {
+	font-family: vcrPixelFont;
+	src: url("/DarkSky/assets/fonts/vcr.ttf");
+}
+
+@font-face {
+	font-family: title2PixelFont;
+	src: url("/DarkSky/assets/fonts/digitalix.ttf");
+}

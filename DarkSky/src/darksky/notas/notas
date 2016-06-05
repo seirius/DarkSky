@@ -1,0 +1,8 @@
+TODO:
+	- Al crear un nuevo usuario dejar elegir entre 3 avatares, cual se añadira a sus items. Para ver que avatar tiene seleccionado habria que añadir nueva columna al usuario.
+	- No dejar votar un post propio.
+	- Hay que añadir un voto con con valor 1 al crear un post en nombre del usuario que lo ha creado.
+	- Controlar errores de backend. (Explicate mejor cuando hagas notas asi by yourself)
+	
+DONE:
+	- No olvidar que en el foro.js al llamar con ajax el votar estas usando siempre el nick "SeiRiuS".

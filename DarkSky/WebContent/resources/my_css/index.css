@@ -1,0 +1,18 @@
+body {
+	background-color: black;
+	padding-bottom: 6rem;
+}
+
+.bloque {
+	width: 100%;
+	overflow: hidden;
+}
+
+.boxes {
+	text-align: center;
+}
+
+.boxes>img {
+	margin: auto;
+	min-width: 100%;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/dark_sky</property>
+        <property name="hibernate.connection.username">andriy</property>
+        <property name="hibernate.connection.password">andriy</property>
+        <property name="hibernate.default_schema">dark_sky</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <mapping class="darksky.modelo.bean.CategoriaItem" />
+        <mapping class="darksky.modelo.bean.CategoriaPost" />
+        <mapping class="darksky.modelo.bean.CategoriaWiki" />
+        <mapping class="darksky.modelo.bean.Comentario" />
+        <mapping class="darksky.modelo.bean.Imagen" />
+        <mapping class="darksky.modelo.bean.Inventario" />
+        <mapping class="darksky.modelo.bean.InventarioId" />
+        <mapping class="darksky.modelo.bean.Item" />
+        <mapping class="darksky.modelo.bean.Post" />
+        <mapping class="darksky.modelo.bean.PostWiki" />
+        <mapping class="darksky.modelo.bean.Respuesta" />
+        <mapping class="darksky.modelo.bean.Rol" />
+        <mapping class="darksky.modelo.bean.Usuario" />
+        <mapping class="darksky.modelo.bean.VotosPost" />
+        <mapping class="darksky.modelo.bean.VotosPostId" />
+        <mapping class="darksky.modelo.bean.SeguirUsuario" />
+        <mapping class="darksky.modelo.bean.SeguirUsuarioId" />
+        <mapping class="darksky.modelo.bean.SeguirPost" />
+        <mapping class="darksky.modelo.bean.SeguirPostId" />
+        <mapping class="darksky.modelo.bean.Notificacion" />
+        <mapping class="darksky.modelo.bean.EventoNotificacion" />
+        <mapping class="darksky.modelo.bean.OperacionAutorizacion" />
+        <mapping class="darksky.modelo.bean.ConfirmarAccion" />
+        <mapping class="darksky.modelo.bean.Menu" />
+    </session-factory>
+</hibernate-configuration>
