@@ -29,6 +29,7 @@ String thisPath = "/DarkSky/categoria?categoria=" + categoria;
 <!-- SCRIPT -->
 <script>
 	var thisPath = "<%= thisPath %>";
+	var isSessionInit = <%= isSessionInit %>;
 </script>
 
 <!-- Imports -->

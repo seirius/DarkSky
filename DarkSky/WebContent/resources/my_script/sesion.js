@@ -73,7 +73,7 @@
 					tituloSesion.append(tituloNick);
 					
 					var textCenter = $("<div class='text-center margin-bot-1'></div>");
-					var buttonLogout = $("<button class='btn btn-pixel btn-pixel-blue clickable' data-href='/DarkSky/cerrar-sesion?backUrl="+thisPath+"'>Cerrar sesion</button>");
+					var buttonLogout = $("<button class='btn btn-pixel btn-pixel-blue clickable' data-href='/DarkSky/cerrar-sesion?backUrl="+thisPath+"'>Cerrar sesión</button>");
 					buttonLogout.click(function() {
 						window.document.location = $(this).data("href");
 					});
