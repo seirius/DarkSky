@@ -167,7 +167,7 @@ public class UsuarioService {
 			
 			manager.beginTransaction();
 			usuarioDAO.update(usuario);
-			manager.commitClose();
+			manager.commit();
 			
 		} catch(Exception e) {
 			manager.rollbackClose();
