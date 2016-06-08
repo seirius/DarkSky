@@ -210,10 +210,10 @@ AjaxFabric.prototype.executeSharedFunctions = function (name) {
 
 AjaxFabric.prototype.allAjaxDone = function (names) {
 	try {
+		var ajaxFabric = this;
 		var ajaxsDone = 0;
-		var i = 0;
-		for (i; i < names.length; i++) {
-			var ajaxCall = this.getAjax(names[i]);
+		names.some(function (value, index, names) {
+			var ajaxCall = ajaxFabric.getAjax(value);
 			if (ajaxCall.isDone) {
 				if (ajaxCall.errorCode == 0) {
 					ajaxsDone++;
@@ -221,7 +221,7 @@ AjaxFabric.prototype.allAjaxDone = function (names) {
 					return -1;
 				}
 			}
-		}
+		});
 		
 		if (ajaxsDone == names.length) {
 			return 1;
@@ -234,10 +234,9 @@ AjaxFabric.prototype.allAjaxDone = function (names) {
 };
 
 AjaxFabric.prototype.executeAll = function () {
-	var i = 0;
-	for (i; i < this.ajaxs.length; i++) {
-		this.ajaxs[i].execute();
-	}
+	this.ajaxs.forEach(function (value, index, ajaxs) {
+		value.execute();
+	});
 };
 
 
