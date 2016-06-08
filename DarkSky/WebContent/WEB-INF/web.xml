@@ -100,7 +100,7 @@
   <context-param>
     <description>Ubicacion de las imagenes subidas</description>
     <param-name>filePath</param-name>
-    <param-value>C:\Dev_projects\Eclipse\Web_Dark_Sky\DarkSky\WebContent\data\post_img</param-value>
+    <param-value>C:\Users\andse\Desktop\Github\DarkSky\WebContent\data\post_img</param-value>
   </context-param>
   <context-param>
     <description>Maximo tamaño de las imagenes | Debe ser un entero en kilobytes</description>

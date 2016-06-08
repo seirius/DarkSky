@@ -374,7 +374,7 @@ public class PostService {
 				
 			}
 			
-			manager.commitClose();
+			manager.commit();
 		} catch(Exception e) {
 			manager.rollback();
 			if (e.getCause() == null) {

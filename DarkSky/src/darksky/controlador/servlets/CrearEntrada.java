@@ -59,11 +59,11 @@ public class CrearEntrada extends HttpServlet {
 		}
 		
 		Imagen imagen = null;
-		
+		boolean error = false;
 		if (uploadedFile.getSize() > 0 && uploadedFile.getSize() < maxFileSize) {
 			String fileName      = uploadedFile.getSubmittedFileName();
 			String fileExtension = fileName.substring(fileName.length() - 4);
-			if (fileExtension.equals(".jpg") || fileExtension.equals(".png") || fileExtension.equals(".gif")) {
+			if (fileExtension.equalsIgnoreCase(".jpg") || fileExtension.equalsIgnoreCase(".png") || fileExtension.equalsIgnoreCase(".gif")) {
 				String finalUrl = filePath + File.separator + fileName;
 				
 				uploadedFile.write(finalUrl);
@@ -72,25 +72,29 @@ public class CrearEntrada extends HttpServlet {
 				imagen.setUrl("/DarkSky/data/post_img/"+fileName);
 				
 			} else {
-				this.log("ERR: Solo se admiten formatos .jpg .png .gif o el tamaño de imagen excedido. |Creacion de nueva entrada|");
-				return;
+				error = true;
+				
 			}
 		}
 		
-		CategoriaPost categoriaPost = new CategoriaPost(inputCategoria);
-		
-		Post post = new Post();
-		post.setCategoriaPost(categoriaPost);
-		post.setTitulo(inputTitulo);
-		post.setTexto(inputTexto);
-		post.setEnPortada(enPortada);
-		post.setImagen(imagen);
-		post.setUsuario(sessionHandler.getUsuario());
-		
-		PostService postService = new PostService();
-		post = postService.insertarPost(post);
-		
-		response.sendRedirect(response.encodeRedirectURL("/DarkSky/post?idPost=" + post.getId()));
+		if (!error) {
+			CategoriaPost categoriaPost = new CategoriaPost(inputCategoria);
+			
+			Post post = new Post();
+			post.setCategoriaPost(categoriaPost);
+			post.setTitulo(inputTitulo);
+			post.setTexto(inputTexto);
+			post.setEnPortada(enPortada);
+			post.setImagen(imagen);
+			post.setUsuario(sessionHandler.getUsuario());
+			
+			PostService postService = new PostService();
+			post = postService.insertarPost(post);
+			
+			response.sendRedirect(response.encodeRedirectURL("/DarkSky/post?idPost=" + post.getId()));
+		} else {
+			response.sendRedirect("/DarkSky/crear-entrada?error=true");
+		}
 	}
 	
 

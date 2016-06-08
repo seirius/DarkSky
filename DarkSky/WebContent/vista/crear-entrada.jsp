@@ -14,6 +14,9 @@
 <%
 String thisPath = "/DarkSky/pagina-principal";
 
+String error = request.getParameter("error");
+if (error == null) error = "";
+
 SessionHandler sessionHandler = new SessionHandler(request);
 
 PostService postService = new PostService();
@@ -23,6 +26,7 @@ List<CategoriaPost> categorias = postService.getCategorias();
 <!-- SCRIPT -->
 <script>
 	var thisPath = "<%= thisPath %>";
+	var error = "<%= error %>";
 </script>
 
 <!-- Imports -->

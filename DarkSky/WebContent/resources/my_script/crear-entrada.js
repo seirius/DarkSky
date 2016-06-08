@@ -45,4 +45,8 @@ $(document).ready(function () {
 			}
 		}
 	});
+	
+	if (error === "true") {
+		launchModal("Error", "Solo se admiten formatos .jpg .png .gif o el tamaño de imagen excedido.").modal("show");
+	}
 });

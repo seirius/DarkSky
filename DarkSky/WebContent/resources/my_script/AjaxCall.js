@@ -182,29 +182,27 @@ AjaxFabric.prototype.addSharedFunction = function (sharedFunction, ajaxNames) {
 
 AjaxFabric.prototype.executeSharedFunctions = function (name) {
 	try {
-		var i = 0;
-		for (i; i < this.sharedFunctions.length; i++) {
-			var functions = this.sharedFunctions[i];
+		var ajaxFabric = this;
+		ajaxFabric.sharedFunctions.some(function (value, index, sharedFunctions) {
 			var hisFunction = false;
 			
-			var j = 0;
-			for (j; j < functions.ajaxNames.length; j++) {
-				if (functions.ajaxNames[j] == name) {
-					hisFunctions = true;
-					j = functions.ajaxNames.length;
+			value.ajaxNames.some(function (value2, index2) {
+				if (value2 == name) {
+					hisFunction = true;
+					return true;
 				}
-			}
+			});
 			
-			if (hisFunctions) {
-				var ajaxsDone = this.allAjaxDone(functions.ajaxNames);
+			if (hisFunction) {
+				var ajaxsDone = ajaxFabric.allAjaxDone(value.ajaxNames);
 				if (ajaxsDone == -1) {
-					this.sharedFunctions.splice(i, 1);
-				} else if (ajaxsDone == 1) {
-					this.sharedFunctions[i].sharedFunction(this);
-					this.sharedFunctions.splice(i, 1);
+					value.executed = true;
+				} else if (ajaxsDone == 1 && !value.executed) {
+					value.sharedFunction(ajaxFabric);
+					value.executed = true;
 				}
 			}
-		}
+		});
 	} catch(e) {
 		modalError("Fatal-Error", "Fallo en la funcion AjaxFabric.executeSharedFunctions || " + e);
 	}
@@ -216,10 +214,12 @@ AjaxFabric.prototype.allAjaxDone = function (names) {
 		var i = 0;
 		for (i; i < names.length; i++) {
 			var ajaxCall = this.getAjax(names[i]);
-			if (ajaxCall.isDone && ajaxCall.errorCode == 0) {
-				ajaxsDone++;
-			} else if (ajaxCall.errorCode != 0) {
-				return -1;
+			if (ajaxCall.isDone) {
+				if (ajaxCall.errorCode == 0) {
+					ajaxsDone++;
+				} else if (ajaxCall.errorCode != 0) {
+					return -1;
+				}
 			}
 		}
 		

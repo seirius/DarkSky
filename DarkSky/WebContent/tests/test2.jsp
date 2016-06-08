@@ -38,19 +38,50 @@ boolean isSessionInit = sessionHandler.isInit();
 	<script>
 		var isSessionInit = <%= isSessionInit %>;
 		
-		var parameters = {
-			item1: "item1",
-			item2: "item2"
-		};
-		
-		var functionToEx = function(data) {
-			console.log(data);
-		}
-		
 		$(document).ready(function () {
 			$("#buttonTest").click(function () {
-				var ajaxCall = new AjaxCall("/DarkSky/TestServlet", parameters, functionToEx);
-				ajaxCall.execute();
+				var ajaxFabric = new AjaxFabric();
+				
+				var parametros = {
+					type: "getTextoComentario",
+					tipoComment: "comentario",
+					idComment: 5
+				};
+				
+				var ajax1 = ajaxFabric.getNewAjaxCall(urls.COMENTAR, parametros, "ajax1");
+				var ajax2 = ajaxFabric.getNewAjaxCall(urls.COMENTAR, parametros, "ajax2");
+				var ajax3 = ajaxFabric.getNewAjaxCall(urls.COMENTAR, parametros, "ajax3");
+				var ajax4 = ajaxFabric.getNewAjaxCall(urls.COMENTAR, parametros, "ajax4");
+				
+				ajax1.functionToEx = function () {
+					console.log("function to ex: ajax1");
+				};
+				
+				ajax2.functionToEx = function () {
+					console.log("function to ex: ajax2");
+				};
+				
+				ajax3.functionToEx = function () {
+					console.log("function to ex: ajax3");
+				};
+				
+				ajax4.functionToEx = function () {
+					console.log("function to ex: ajax4");
+				};
+				
+				ajaxFabric.addSharedFunction(function () {
+					console.log("shared function for: ajax1, ajax2");
+				}, ["ajax1", "ajax2"]);
+				
+				ajaxFabric.addSharedFunction(function () {
+					console.log("shared function for: ajax1, ajax3");
+				}, ["ajax1", "ajax3"]);
+				
+				ajaxFabric.addSharedFunction(function () {
+					console.log("shared function for: ajax1, ajax2, ajax3");
+				}, ["ajax1", "ajax2", "ajax3"]);
+				
+				ajaxFabric.executeAll();
 			});
 		});
 	</script>

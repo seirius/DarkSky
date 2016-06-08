@@ -89,10 +89,10 @@ var numNotisEntrada = 0;
 				});
 			});
 			
-			if (typeof isSessionInit != "undefined" && isSessionInit) {
-				setNumeroNotificacionesXS();
-				setInterval(setNumeroNotificacionesXS, 5000);
-			}
+//			if (typeof isSessionInit != "undefined" && isSessionInit) {
+//				setNumeroNotificacionesXS();
+//				setInterval(setNumeroNotificacionesXS, 5000);
+//			}
 			
 			
 		} else {

@@ -143,23 +143,28 @@ public class Comentar extends HttpServlet {
 	}
 	
 	private void getTextoComentario(HttpServletRequest request, HttpServletResponse response, JsonReturn ret) throws IOException {
-		JsonObject data = new JsonObject();
-		
-		String tipoComment = request.getParameter("tipoComment");
-		int idComment = Integer.parseInt(request.getParameter("idComment"));
-		
-		PostService postService = new PostService();
-		
-		if (tipoComment.equals("comentario")) {
-			Comentario comentario = postService.getComentario(idComment);
-			data.addProperty("TEXTO", comentario.getTexto());
-			ret.setData(data);
-		} else if (tipoComment.equals("respuesta")) {
-			Respuesta respuesta = postService.getRespuesta(idComment);
-			data.addProperty("TEXTO", respuesta.getTexto());
-			ret.setData(data);
-		} else {
-			ret.setErrorMsg(ErrorMsgs.METHOD_NOT_FOUND + tipoComment);
+		try {
+			JsonObject data = new JsonObject();
+			
+			String tipoComment = request.getParameter("tipoComment");
+			int idComment = Integer.parseInt(request.getParameter("idComment"));
+			
+			PostService postService = new PostService();
+			
+			if (tipoComment.equals("comentario")) {
+				Comentario comentario = postService.getComentario(idComment);
+				data.addProperty("TEXTO", comentario.getTexto());
+				ret.setData(data);
+			} else if (tipoComment.equals("respuesta")) {
+				Respuesta respuesta = postService.getRespuesta(idComment);
+				data.addProperty("TEXTO", respuesta.getTexto());
+				ret.setData(data);
+			} else {
+				ret.setErrorMsg(ErrorMsgs.METHOD_NOT_FOUND + tipoComment);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+			ret.setErrorMsg(ErrorMsgs.STANDARD_MSG);
 		}
 	}
 
